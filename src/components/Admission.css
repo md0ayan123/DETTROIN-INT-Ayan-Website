@@ -1,0 +1,85 @@
+.cta-band {
+  padding: 80px 0;
+  background: var(--marigold);
+  border-radius: 28px;
+  margin: 0 auto 100px;
+  max-width: calc(var(--maxw) + 56px);
+}
+.cta-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.cta-heading {
+  color: var(--ink);
+  margin-top: 14px;
+}
+.cta-copy {
+  margin-top: 14px;
+  color: #5b4620;
+  font-size: 15.5px;
+  max-width: 44ch;
+  display: block;
+}
+.cta-band .btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+.cta-band .btn-primary:hover {
+  background: #000;
+  box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.4);
+}
+.cta-form {
+  background: var(--paper-alt);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cta-form input,
+.cta-form select {
+  font-family: var(--body);
+  font-size: 14.5px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+}
+.cta-form label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-bottom: -6px;
+}
+.submit-btn {
+  margin-top: 6px;
+  justify-content: center;
+  width: 100%;
+}
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+.form-message {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+}
+.form-message.success {
+  color: var(--leaf-deep);
+}
+.form-message.error {
+  color: var(--coral);
+}
+@media (max-width: 900px) {
+  .cta-inner {
+    grid-template-columns: 1fr;
+  }
+}
