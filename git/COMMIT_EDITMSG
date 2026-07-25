@@ -1,0 +1,4 @@
+docs: add deployment guide and root dev scripts (final polish)
+
+- Root package.json lets client + server run together via npm run dev
+- README documents build/deploy steps for both apps

@@ -1,0 +1,11 @@
+0000000000000000000000000000000000000000 362338a609798a58677d29157d824dc067876f03 Excellence School Dev <dev@example.com> 1785005187 +0000	commit (initial): chore: initial project scaffold with README and gitignore
+362338a609798a58677d29157d824dc067876f03 847ab4986150fb727d8b1cba62adb8cdb44f09ee Excellence School Dev <dev@example.com> 1785005190 +0000	commit: feat(server): add Express API with admissions enquiry endpoint
+847ab4986150fb727d8b1cba62adb8cdb44f09ee 920693c44fecf58409f65ffa636525c79ce5f0da Excellence School Dev <dev@example.com> 1785005192 +0000	commit: chore(client): scaffold Vite + React app with global design tokens
+920693c44fecf58409f65ffa636525c79ce5f0da e8a0a242dd2b6a908d083b140a8feb4269736c0c Excellence School Dev <dev@example.com> 1785005196 +0000	commit: feat(client): build Navbar, Hero, and About sections
+e8a0a242dd2b6a908d083b140a8feb4269736c0c 4450d39331903297b7316618190f6a83d443e4cb Excellence School Dev <dev@example.com> 1785005199 +0000	commit: feat(client): add Growth Path signature section, Why Us, and School Life
+4450d39331903297b7316618190f6a83d443e4cb 5f066392d49a4df1f9298e8728a018bdbe423f3f Excellence School Dev <dev@example.com> 1785005203 +0000	commit: feat(client): add Testimonials, FAQ accordion, Footer, and floating contact buttons
+5f066392d49a4df1f9298e8728a018bdbe423f3f 14bb24c05b5e7650efe28364ef28012e9682f280 Excellence School Dev <dev@example.com> 1785005207 +0000	commit: feat(client): wire admissions form to Express API and assemble App
+14bb24c05b5e7650efe28364ef28012e9682f280 1080b6ee20abcd2de859a561818535d31850739b Excellence School Dev <dev@example.com> 1785005317 +0000	commit: style: responsive improvements for narrow phone breakpoints
+1080b6ee20abcd2de859a561818535d31850739b 60f2cc9e5529a7f282cd399151b417f482b34f73 Excellence School Dev <dev@example.com> 1785005320 +0000	commit: perf: memoize repeated card components
+60f2cc9e5529a7f282cd399151b417f482b34f73 25742f98bcc947a8f9022f9d0219c136d51fdfb4 Excellence School Dev <dev@example.com> 1785005323 +0000	commit: fix: validate phone number client-side before calling the API
+25742f98bcc947a8f9022f9d0219c136d51fdfb4 f1b7c52a6cbf24c2a6f694e4083481d0cfcfdd38 Excellence School Dev <dev@example.com> 1785005327 +0000	commit: docs: add deployment guide and root dev scripts (final polish)
