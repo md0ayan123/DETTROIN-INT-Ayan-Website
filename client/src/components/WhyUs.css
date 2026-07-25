@@ -1,9 +1,17 @@
 .why {
   padding: 100px 0;
+  overflow: hidden;
 }
 .why-heading {
   margin-top: 14px;
+  max-width: 650px;
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 .why-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -11,11 +19,67 @@
   margin-top: 40px;
 }
 .why-card {
+  position: relative;
+  overflow: hidden;
   background: var(--paper-alt);
   border: 1px solid var(--line);
   border-radius: 18px;
-  padding: 28px 24px;
+  padding: 28px 24px; /* Initial animation state */
+  opacity: 0;
+  transform: translateY(50px) scale(0.96);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
 }
+
+.why-card.in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Card 1 */
+.why-card:nth-child(1) {
+  transition-delay: 0.05s;
+} /* Card 2 */
+.why-card:nth-child(2) {
+  transition-delay: 0.15s;
+} /* Card 3 */
+.why-card:nth-child(3) {
+  transition-delay: 0.25s;
+} /* Card 4 */
+.why-card:nth-child(4) {
+  transition-delay: 0.35s;
+}
+
+.why-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.8s ease;
+  pointer-events: none;
+}
+.why-card:hover::before {
+  left: 130%;
+}
+
+.why-card:hover {
+  transform: translateY(-10px) scale(1.015);
+  border-color: var(--leaf-deep);
+  box-shadow: 0 20px 45px rgba(25, 50, 30, 0.12);
+} 
+
 .why-icon {
   width: 44px;
   height: 44px;
@@ -26,25 +90,107 @@
   justify-content: center;
   margin-bottom: 18px;
   color: var(--leaf-deep);
-  font-size: 20px;
+  font-size: 20px; 
+  opacity: 0;
+  transform: scale(0.5) rotate(-12deg);
+  transition:
+    opacity 0.5s ease,
+    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.3s ease;
+} 
+.why-card.in .why-icon {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+} 
+.why-card:nth-child(1) .why-icon {
+  transition-delay: 0.35s;
 }
+.why-card:nth-child(2) .why-icon {
+  transition-delay: 0.45s;
+}
+.why-card:nth-child(3) .why-icon {
+  transition-delay: 0.55s;
+}
+.why-card:nth-child(4) .why-icon {
+  transition-delay: 0.65s;
+} 
+.why-card:hover .why-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: #dfeade;
+} 
 .why-card h4 {
   font-family: var(--display);
   font-size: 18px;
   margin-bottom: 8px;
   font-weight: 600;
+  opacity: 0;
+  transform: translateY(15px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.why-card.in h4 {
+  opacity: 1;
+  transform: translateY(0);
 }
 .why-card p {
   font-size: 14px;
   color: var(--ink-soft);
+  opacity: 0;
+  transform: translateY(15px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
+.why-card.in p {
+  opacity: 1;
+  transform: translateY(0);
+} 
+.why-card:nth-child(1) h4,
+.why-card:nth-child(1) p {
+  transition-delay: 0.45s;
+}
+.why-card:nth-child(2) h4,
+.why-card:nth-child(2) p {
+  transition-delay: 0.55s;
+}
+.why-card:nth-child(3) h4,
+.why-card:nth-child(3) p {
+  transition-delay: 0.65s;
+}
+.why-card:nth-child(4) h4,
+.why-card:nth-child(4) p {
+  transition-delay: 0.75s;
+} 
 @media (max-width: 900px) {
   .why-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 @media (max-width: 560px) {
+  .why {
+    padding: 75px 0;
+  }
   .why-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .why-card {
+    padding: 24px 20px;
+  }
+} 
+@media (prefers-reduced-motion: reduce) {
+  .why-card,
+  .why-icon,
+  .why-card h4,
+  .why-card p,
+  .why-heading {
+    transition: none;
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+  .why-card::before {
+    display: none;
   }
 }
