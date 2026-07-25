@@ -1,70 +1,186 @@
-# Getting Started with Create React App
+# Excellence School Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive school website developed using the MERN stack. The project includes a React frontend and a Node.js/Express backend to handle admission enquiry submissions.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Full Name
 
-### `npm start`
+Mohammed Ayan
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Intern ID
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+YOUR_INTERN_ID
 
-### `npm test`
+## Email Address
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+md.ayan835@gmail.com
 
-### `npm run build`
+## GitHub Username
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+md0ayan123
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Selected Website
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Excellence International School
 
-### `npm run eject`
+https://excellenceinternationalschool.com/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Live Demo Link
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://your-live-demo-link.vercel.app/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Technologies Used
 
-## Learn More
+### Frontend
+- React.js
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- React Hooks
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Backend
+- Node.js
+- Express.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Others
+- JSON File Storage
+- Git & GitHub
+- Responsive Design
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Features
 
-### Analyzing the Bundle Size
+- Responsive Navigation Bar
+- Hero Section
+- About Section
+- Academics Section
+- Why Choose Us
+- School Life Gallery
+- FAQ Section
+- Contact Section
+- Admission Enquiry Form
+- Responsive Footer
+- Mobile Friendly Design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Key Improvements Made
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Redesigned the homepage with a modern UI.
+- Improved responsiveness for desktop, tablet, and mobile devices.
+- Added smooth animations and hover effects.
+- Created a responsive navigation bar with a hamburger menu.
+- Designed a modern footer with social media icons.
+- Implemented an enquiry form connected to the backend.
+- Organized the project using reusable React components.
+- Improved spacing, typography, and color consistency.
+- Enhanced user experience with smooth scrolling and transitions.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Folder Structure
 
-### Deployment
+```
+EXCELLENCE-SCHOOL-PROJECT
+│
+├── client
+│   ├── public
+│   ├── src
+│   │   ├── components
+│   │   ├── hooks
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── index.jsx
+│   ├── package.json
+│   └── README.md
+│
+├── server
+│   ├── data
+│   │   └── enquiries.json
+│   ├── routes
+│   ├── server.js
+│   └── package.json
+│
+└── .gitignore
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Clone Repository
+
+```bash
+git clone https://github.com/md0ayan123/EXCELLENCE-SCHOOL-PROJECT.git
+```
+
+### Install Frontend
+
+```bash
+cd client
+npm install
+```
+
+### Install Backend
+
+```bash
+cd ../server
+npm install
+```
+
+---
+
+## Run Frontend
+
+```bash
+cd client
+npm start
+```
+
+Runs on:
+
+```
+http://localhost:3000
+```
+
+---
+
+## Run Backend
+
+```bash
+cd server
+node server.js
+```
+
+or
+
+```bash
+npm start
+```
+
+Runs on:
+
+```
+http://localhost:5000
+```
+
+---
+
+## Screenshots
+
+Add screenshots of your project here.
+
+---
+
+## Author
+
+**Mohammed Ayan**
+
+GitHub: https://github.com/md0ayan123
+
+Email: md.ayan835@gmail.com

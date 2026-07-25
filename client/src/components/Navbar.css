@@ -14,7 +14,6 @@
     height:80px;
 }
 
-/* Logo */
 
 .logo{
     display:flex;
@@ -37,8 +36,6 @@
     font-weight:bold;
     flex-shrink:0;
 }
-
-/* Desktop Menu */
 
 .nav-links{
     display:flex;
@@ -71,7 +68,7 @@
     width:100%;
 }
 
-/* CTA */
+
 
 .nav-cta{
     display:flex;
@@ -84,7 +81,7 @@
     white-space:nowrap;
 }
 
-/* Burger */
+
 
 .burger{
     display:none;
@@ -135,7 +132,6 @@
     transform:rotate(-45deg);
 }
 
-/* Mobile Panel */
 
 .mobile-panel{
     position:fixed;
@@ -165,9 +161,7 @@
     margin-top:20px;
 }
 
-/* ================== */
-/* Tablet */
-/* ================== */
+
 
 @media (max-width:1165px){
 
@@ -185,9 +179,7 @@ display:block;
 
 }
 
-/* ================== */
-/* Mobile */
-/* ================== */
+
 
 @media (max-width:768px){
 
@@ -215,8 +207,7 @@ height:calc(100vh - 72px);
 }
 
 }
-
-/* Small Phones */
+  
 
 @media (max-width:480px){
 
