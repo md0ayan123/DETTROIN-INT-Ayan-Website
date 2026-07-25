@@ -36,24 +36,31 @@ export default function Navbar() {
           <a href="#admissions" className="btn btn-primary">
             Enquire Now
           </a>
-          <button
-            className="burger"
-            aria-label="Open menu"
-            aria-expanded={open}
-            onClick={() => setOpen((o) => !o)}
-          >
-            <span />
-          </button>
+       <button
+          className={`burger ${open ? "active" : ""}`}
+          onClick={() => setOpen(!open)}
+        >
+          <span></span>
+        </button>
         </div>
       </nav>
 
-      <div className={`mobile-panel ${open ? "open" : ""}`}>
+        <div className={`mobile-panel ${open ? "open" : ""}`}>
         {LINKS.map((l) => (
-          <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
+          <a
+            key={l.href}
+            href={l.href}
+            onClick={() => setOpen(false)}
+          >
             {l.label}
           </a>
         ))}
-        <a href="#admissions" className="btn btn-primary" onClick={() => setOpen(false)}>
+
+        <a
+          href="#admissions"
+          className="btn btn-primary"
+          onClick={() => setOpen(false)}
+        >
           Enquire Now
         </a>
       </div>

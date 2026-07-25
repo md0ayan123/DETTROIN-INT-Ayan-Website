@@ -1,141 +1,237 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(243, 245, 238, 0.88);
-  backdrop-filter: blur(10px);
+  z-index: 1000;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
 }
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 78px;
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:80px;
 }
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: 19px;
+
+/* Logo */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:20px;
+    font-weight:700;
+    white-space:nowrap;
 }
-.logo-mark {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: var(--leaf);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 17px;
-  flex: none;
+
+.logo-mark{
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    background:var(--leaf);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    flex-shrink:0;
 }
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+
+/* Desktop Menu */
+
+.nav-links{
+    display:flex;
+    gap:28px;
 }
-.nav-links a {
-  font-size: 14.5px;
-  font-weight: 600;
-  color: var(--ink-soft);
-  position: relative;
-  padding: 4px 0;
+
+.nav-links a{
+    position:relative;
+    font-weight:600;
+    color:var(--ink-soft);
+    transition:.3s;
 }
-.nav-links a:hover {
-  color: var(--ink);
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:var(--leaf);
+    transition:.3s;
 }
-.nav-cta {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+
+.nav-links a:hover{
+    color:var(--leaf);
 }
-.nav-phone {
-  font-family: var(--mono);
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--ink-soft);
-  display: flex;
-  align-items: center;
-  gap: 6px;
+
+.nav-links a:hover::after{
+    width:100%;
 }
-.burger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  flex: none;
+
+/* CTA */
+
+.nav-cta{
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
+
+.nav-phone{
+    font-size:14px;
+    white-space:nowrap;
+}
+
+/* Burger */
+
+.burger{
+    display:none;
+    width:45px;
+    height:45px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    position:relative;
+}
+
 .burger span,
 .burger span::before,
-.burger span::after {
-  content: "";
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--ink);
-  position: relative;
+.burger span::after{
+    position:absolute;
+    left:11px;
+    width:24px;
+    height:2px;
+    background:#222;
+    transition:.3s;
 }
-.burger span::before {
-  position: absolute;
-  top: -7px;
+
+.burger span{
+    top:22px;
 }
-.burger span::after {
-  position: absolute;
-  top: 7px;
+
+.burger span::before{
+    content:"";
+    top:-8px;
 }
-.mobile-panel {
-  display: none;
-  position: fixed;
-  inset: 78px 0 0 0;
-  background: var(--paper);
-  z-index: 99;
-  padding: 30px 28px;
-  overflow-y: auto;
-  transform: translateY(-12px);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+
+.burger span::after{
+    content:"";
+    top:8px;
 }
-.mobile-panel.open {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
+
+.burger.active span{
+    background:transparent;
 }
-.mobile-panel a {
-  display: block;
-  padding: 16px 0;
-  font-family: var(--display);
-  font-size: 24px;
-  border-bottom: 1px solid var(--line);
+
+.burger.active span::before{
+    top:0;
+    transform:rotate(45deg);
 }
-.mobile-panel .btn {
-  margin-top: 24px;
-  width: 100%;
-  justify-content: center;
+
+.burger.active span::after{
+    top:0;
+    transform:rotate(-45deg);
 }
-@media (max-width: 900px) {
-  .nav-links {
-    display: none;
-  }
-  .nav-phone {
-    display: none;
-  }
-  .burger {
-    display: block;
-  }
-  .mobile-panel {
-    display: block;
-  }
+
+/* Mobile Panel */
+
+.mobile-panel{
+    position:fixed;
+    top:80px;
+    left:-100%;
+    width:100%;
+    height:calc(100vh - 80px);
+    background:white;
+    transition:.35s;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
 }
-@media (max-width: 380px) {
-  .logo {
-    font-size: 15px;
-  }
+
+.mobile-panel.open{
+    left:0;
+}
+
+.mobile-panel a{
+    font-size:22px;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+.mobile-panel .btn{
+    margin-top:20px;
+}
+
+/* ================== */
+/* Tablet */
+/* ================== */
+
+@media (max-width:1165px){
+
+.nav-links{
+display:none;
+}
+
+.nav-phone{
+display:none;
+}
+
+.burger{
+display:block;
+}
+
+}
+
+/* ================== */
+/* Mobile */
+/* ================== */
+
+@media (max-width:768px){
+
+.navbar{
+height:72px;
+}
+
+.logo{
+font-size:17px;
+}
+
+.logo-mark{
+width:38px;
+height:38px;
+font-size:16px;
+}
+
+.nav-cta .btn{
+display:none;
+}
+
+.mobile-panel{
+top:72px;
+height:calc(100vh - 72px);
+}
+
+}
+
+/* Small Phones */
+
+@media (max-width:480px){
+
+.logo{
+font-size:15px;
+}
+
+.logo-mark{
+width:34px;
+height:34px;
+font-size:14px;
+}
+
+.mobile-panel a{
+font-size:20px;
+}
+
 }
