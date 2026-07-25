@@ -1,0 +1,29 @@
+.float-contact {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.float-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.35);
+  border: none;
+  cursor: pointer;
+}
+.float-btn.call {
+  background: var(--leaf);
+  color: #fff;
+}
+.float-btn.whatsapp {
+  background: #fff;
+  color: var(--leaf-deep);
+  border: 1px solid var(--line);
+}
