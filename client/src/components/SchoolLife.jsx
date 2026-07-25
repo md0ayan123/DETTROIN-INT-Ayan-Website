@@ -1,3 +1,4 @@
+
 import { useReveal } from "../hooks/useReveal.jsx";
 import "./SchoolLife.css";
 
@@ -24,46 +25,108 @@ const ITEMS = [
   },
 ];
 
-const VALUES = ["Honesty", "Integrity", "Respect", "Discipline", "Compassion", "Responsibility"];
+const VALUES = [
+  "Honesty",
+  "Integrity",
+  "Respect",
+  "Discipline",
+  "Compassion",
+  "Responsibility",
+];
+
+
 
 function LifeCard({ item }) {
   const [ref, inView] = useReveal();
+
   return (
-    <div className={`holistic-card reveal ${inView ? "in" : ""}`} ref={ref}>
-      <span className="holistic-emoji">{item.emoji}</span>
+    <div
+      ref={ref}
+      className={`holistic-card reveal ${inView ? "in" : ""}`}
+    >
+      <span className="holistic-emoji">
+        {item.emoji}
+      </span>
+
       <h4>{item.title}</h4>
+
       <p>{item.body}</p>
     </div>
   );
 }
 
+
+function ValueChip({ value }) {
+  const [ref, inView] = useReveal();
+
+  return (
+    <span
+      ref={ref}
+      className={`value-chip ${inView ? "in" : ""}`}
+    >
+      {value}
+    </span>
+  );
+}
+
+
+
 export default function SchoolLife() {
+  const [headingRef, headingInView] = useReveal();
+
   return (
     <>
+
+
       <section className="holistic" id="life">
         <div className="wrap">
-          <span className="eyebrow">Beyond the classroom</span>
-          <h2 className="holistic-heading">School life, not just school hours.</h2>
+
+          <span className="eyebrow">
+            Beyond the classroom
+          </span>
+
+          <h2
+            ref={headingRef}
+            className={`holistic-heading ${
+              headingInView ? "in" : ""
+            }`}
+          >
+            School life, not just school hours.
+          </h2>
+
           <div className="holistic-grid">
             {ITEMS.map((item) => (
-              <LifeCard key={item.title} item={item} />
+              <LifeCard
+                key={item.title}
+                item={item}
+              />
             ))}
           </div>
+
         </div>
       </section>
 
+     
+
       <section className="values">
         <div className="wrap">
-          <span className="eyebrow">What we teach alongside the syllabus</span>
+
+          <span className="eyebrow">
+            What we teach alongside the syllabus
+          </span>
+
           <div className="values-row">
-            {VALUES.map((v) => (
-              <span className="value-chip" key={v}>
-                {v}
-              </span>
+            {VALUES.map((value) => (
+              <ValueChip
+                key={value}
+                value={value}
+              />
             ))}
           </div>
+
         </div>
       </section>
     </>
   );
 }
+

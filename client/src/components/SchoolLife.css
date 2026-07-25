@@ -1,72 +1,556 @@
+
+/* =====================================================
+   SCHOOL LIFE SECTION
+===================================================== */
+
 .holistic {
   padding: 20px 0 100px;
+  overflow: hidden;
 }
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
 .holistic-heading {
   margin-top: 14px;
+
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+.holistic-heading.in {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
 .holistic-grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
   gap: 0;
+
   margin-top: 40px;
+
   border: 1px solid var(--line);
+
   border-radius: 20px;
+
   overflow: hidden;
+
   background: var(--paper-alt);
 }
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
 .holistic-card {
+  position: relative;
+
+  overflow: hidden;
+
   padding: 32px 24px;
+
   border-right: 1px solid var(--line);
+
+  background: var(--paper-alt);
+
+  opacity: 0;
+
+  transform:
+    translateY(55px)
+    scale(0.95);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.4s ease,
+    box-shadow 0.4s ease;
 }
+
 .holistic-card:last-child {
   border-right: none;
 }
-.holistic-emoji {
-  font-size: 26px;
-  margin-bottom: 14px;
-  display: block;
+
+
+/* =====================================================
+   CARD REVEAL
+===================================================== */
+
+.holistic-card.in {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
 }
+
+
+/* =====================================================
+   STAGGER CARD ANIMATION
+===================================================== */
+
+.holistic-card:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.holistic-card:nth-child(2) {
+  transition-delay: 0.18s;
+}
+
+.holistic-card:nth-child(3) {
+  transition-delay: 0.31s;
+}
+
+.holistic-card:nth-child(4) {
+  transition-delay: 0.44s;
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.holistic-card:hover {
+  z-index: 5;
+
+  background: #f8faf7;
+
+  transform:
+    translateY(-10px)
+    scale(1.02);
+
+  box-shadow:
+    0 22px 50px rgba(20, 40, 25, 0.12);
+}
+
+
+/* =====================================================
+   SHINE EFFECT
+===================================================== */
+
+.holistic-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -130%;
+
+  width: 75%;
+
+  height: 100%;
+
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+
+  transform: skewX(-20deg);
+
+  transition:
+    left 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+
+  pointer-events: none;
+}
+
+.holistic-card:hover::before {
+  left: 140%;
+}
+
+
+/* =====================================================
+   EMOJI
+===================================================== */
+
+.holistic-emoji {
+  display: block;
+
+  width: fit-content;
+
+  font-size: 27px;
+
+  margin-bottom: 16px;
+
+  opacity: 0;
+
+  transform:
+    scale(0.45)
+    rotate(-20deg);
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.75s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+/* Emoji reveal */
+
+.holistic-card.in .holistic-emoji {
+  opacity: 1;
+
+  transform:
+    scale(1)
+    rotate(0deg);
+}
+
+
+/* Emoji stagger */
+
+.holistic-card:nth-child(1) .holistic-emoji {
+  transition-delay: 0.35s;
+}
+
+.holistic-card:nth-child(2) .holistic-emoji {
+  transition-delay: 0.48s;
+}
+
+.holistic-card:nth-child(3) .holistic-emoji {
+  transition-delay: 0.61s;
+}
+
+.holistic-card:nth-child(4) .holistic-emoji {
+  transition-delay: 0.74s;
+}
+
+
+/* Emoji hover */
+
+.holistic-card:hover .holistic-emoji {
+  transform:
+    scale(1.18)
+    rotate(8deg);
+}
+
+
+/* =====================================================
+   CARD TITLE
+===================================================== */
+
 .holistic-card h4 {
   font-size: 17px;
+
   margin-bottom: 8px;
+
+  opacity: 0;
+
+  transform: translateY(18px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+.holistic-card.in h4 {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =====================================================
+   CARD DESCRIPTION
+===================================================== */
+
 .holistic-card p {
   font-size: 13.5px;
+
+  line-height: 1.7;
+
   color: var(--ink-soft);
+
+  opacity: 0;
+
+  transform: translateY(18px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
-@media (max-width: 900px) {
-  .holistic-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .holistic-card {
-    border-bottom: 1px solid var(--line);
-  }
-  .holistic-card:nth-child(2n) {
-    border-right: none;
-  }
+
+.holistic-card.in p {
+  opacity: 1;
+
+  transform: translateY(0);
 }
-@media (max-width: 560px) {
-  .holistic-grid {
-    grid-template-columns: 1fr;
-  }
+
+
+/* =====================================================
+   TEXT STAGGER
+===================================================== */
+
+.holistic-card:nth-child(1) h4,
+.holistic-card:nth-child(1) p {
+  transition-delay: 0.45s;
 }
+
+.holistic-card:nth-child(2) h4,
+.holistic-card:nth-child(2) p {
+  transition-delay: 0.58s;
+}
+
+.holistic-card:nth-child(3) h4,
+.holistic-card:nth-child(3) p {
+  transition-delay: 0.71s;
+}
+
+.holistic-card:nth-child(4) h4,
+.holistic-card:nth-child(4) p {
+  transition-delay: 0.84s;
+}
+
+
+/* =====================================================
+   VALUES SECTION
+===================================================== */
 
 .values {
   padding: 60px 0;
+
+  overflow: hidden;
 }
+
+
+/* =====================================================
+   VALUES ROW
+===================================================== */
+
 .values-row {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 12px;
+
   margin-top: 26px;
 }
+
+
+/* =====================================================
+   VALUE CHIP
+===================================================== */
+
 .value-chip {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
   font-family: var(--mono);
+
   font-size: 13px;
+
   font-weight: 600;
+
   padding: 10px 18px;
+
   border-radius: 999px;
+
   border: 1px solid var(--line);
+
   background: var(--paper-alt);
+
   color: var(--ink-soft);
+
+  opacity: 0;
+
+  transform:
+    translateY(20px)
+    scale(0.85);
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+
+/* =====================================================
+   VALUE REVEAL
+===================================================== */
+
+.value-chip.in {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* =====================================================
+   VALUE STAGGER
+===================================================== */
+
+.value-chip:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.value-chip:nth-child(2) {
+  transition-delay: 0.12s;
+}
+
+.value-chip:nth-child(3) {
+  transition-delay: 0.19s;
+}
+
+.value-chip:nth-child(4) {
+  transition-delay: 0.26s;
+}
+
+.value-chip:nth-child(5) {
+  transition-delay: 0.33s;
+}
+
+.value-chip:nth-child(6) {
+  transition-delay: 0.40s;
+}
+
+
+/* =====================================================
+   VALUE HOVER
+===================================================== */
+
+.value-chip:hover {
+  color: var(--leaf-deep);
+
+  background: #eef4ed;
+
+  border-color: var(--leaf-deep);
+
+  transform:
+    translateY(-5px)
+    scale(1.05);
+
+  box-shadow:
+    0 10px 25px rgba(20, 40, 25, 0.1);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .holistic-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .holistic-card {
+    border-right: 1px solid var(--line);
+
+    border-bottom: 1px solid var(--line);
+  }
+
+  .holistic-card:nth-child(2n) {
+    border-right: none;
+  }
+
+  .holistic-card:nth-child(3),
+  .holistic-card:nth-child(4) {
+    border-bottom: none;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 560px) {
+
+  .holistic {
+    padding: 20px 0 75px;
+  }
+
+  .holistic-heading {
+    font-size: 30px;
+
+    line-height: 1.15;
+  }
+
+  .holistic-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 30px;
+
+    border-radius: 16px;
+  }
+
+  .holistic-card {
+    padding: 27px 20px;
+
+    border-right: none;
+
+    border-bottom: 1px solid var(--line);
+  }
+
+  .holistic-card:last-child {
+    border-bottom: none;
+  }
+
+  .values {
+    padding: 45px 0;
+  }
+
+  .values-row {
+    gap: 9px;
+  }
+
+  .value-chip {
+    font-size: 12px;
+
+    padding: 9px 14px;
+  }
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .holistic-heading,
+  .holistic-card,
+  .holistic-emoji,
+  .holistic-card h4,
+  .holistic-card p,
+  .value-chip {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+
+    animation: none;
+  }
+
+  .holistic-card::before {
+    display: none;
+  }
+}
+
