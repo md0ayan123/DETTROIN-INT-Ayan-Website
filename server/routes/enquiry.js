@@ -19,7 +19,8 @@ async function readEnquiries() {
 }
 
 async function writeEnquiries(list) {
-  await writeFile(DATA_FILE, JSON.stringify(list, null, 2), "utf-8");
+  console.log("Writing to:", DATA_FILE);
+  await writeFile(DATA_FILE, JSON.stringify(list, null, 2), "utf8");
 }
 
 function validate({ childName, grade, phone }) {
@@ -34,25 +35,38 @@ function validate({ childName, grade, phone }) {
 
 
 router.post("/", async (req, res) => {
-  const errors = validate(req.body || {});
-  if (errors.length) {
-    return res.status(400).json({ error: "Invalid submission", details: errors });
+  try {
+    const errors = validate(req.body || {});
+
+    if (errors.length) {
+      return res.status(400).json({
+        error: "Invalid submission",
+        details: errors,
+      });
+    }
+
+    const { childName, grade, phone } = req.body;
+
+    const enquiry = {
+      id: Date.now().toString(36),
+      childName: childName.trim(),
+      grade: grade.trim(),
+      phone: phone.trim(),
+      submittedAt: new Date().toISOString(),
+    };
+
+    const list = await readEnquiries();
+    list.push(enquiry);
+    await writeEnquiries(list);
+
+    res.status(201).json(enquiry);
+  } catch (err) {
+    console.error(err);
+
+    res.status(500).json({
+      error: err.message,
+    });
   }
-
-  const { childName, grade, phone } = req.body;
-  const enquiry = {
-    id: Date.now().toString(36),
-    childName: childName.trim(),
-    grade: grade.trim(),
-    phone: phone.trim(),
-    submittedAt: new Date().toISOString(),
-  };
-
-  const list = await readEnquiries();
-  list.push(enquiry);
-  await writeEnquiries(list);
-
-  res.status(201).json(enquiry);
 });
 
 
