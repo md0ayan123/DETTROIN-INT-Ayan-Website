@@ -8,10 +8,6 @@ A modern, responsive school website developed using the MERN stack. The project 
 
 Mohammed Ayan
 
-## Intern ID
-
-YOUR_INTERN_ID
-
 ## Email Address
 
 md.ayan835@gmail.com
