@@ -7,8 +7,8 @@ const PORT = process.env.PORT || 4000;
 app.use(
   cors({
     origin: [
-      "http://localhost:3000", // Local development
-      "https://dettroin-int-ayan-website-iour.vercel.app", // Production frontend
+      "http://localhost:3000", 
+      "https://dettroin-int-ayan-website.vercel.app",
     ],
     methods: ["GET", "POST", "OPTIONS"],
     credentials: true,
