@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useReveal } from "../hooks/useReveal.jsx";
 import "./Admissions.css";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+const API_URL = import.meta.env.VITE_API_URL || "https://dettroin-int-ayan-website-dfzo.onrender.com";
 const GRADES = ["Daycare", "Pre-Primary", "Primary (Class 1-5)", "Middle School (Class 6-8)"];
 
 export default function Admissions() {
