@@ -28,7 +28,7 @@ https://excellenceinternationalschool.com/
 
 ## Live Demo Link
 
-https://your-live-demo-link.vercel.app/
+https://dettroin-int-ayan-website-iour.vercel.app/
 
 ---
 
@@ -173,7 +173,7 @@ http://localhost:5000
 
 ## Screenshots
 
-Add screenshots of your project here.
+<img width="1901" height="910" alt="image" src="https://github.com/user-attachments/assets/bfd15147-20eb-4e93-9f69-ecddd77baf78" />
 
 ---
 
