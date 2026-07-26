@@ -4,11 +4,13 @@ import enquiryRouter from "./routes/enquiry.js";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
-
 app.use(
   cors({
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST"],
+    origin: [
+      "http://localhost:3000", // Local development
+      "https://dettroin-int-ayan-website-iour.vercel.app", // Production frontend
+    ],
+    methods: ["GET", "POST", "OPTIONS"],
     credentials: true,
   })
 );
